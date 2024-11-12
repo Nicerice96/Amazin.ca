@@ -10,15 +10,24 @@ $(document).ready(function() {
             // for each cart in list of carts
             // for each book in the cart
             carts.forEach(cart => {
-                    let cartHtml = `
+                let cartHtml = `
                     <li>
                         <strong>Cart ID:</strong> ${cart.id} <br>
                         <strong>Books:</strong> 
                         <ul>`;
-                    cart.books.forEach(book => {
-                        cartHtml += `
+                cart.books.forEach(book => {
+                    const coverImage = book.coverImage && book.coverImage.trim()
+                        ? `data:image/jpeg;base64,${book.coverImage}`
+                        : '/images/default-cover.jpg';
+
+                    cartHtml += `
                         <link rel="stylesheet" href="/cartstylesheet.css">
                         <li>
+                            <div class="image-container">
+                                <img src="${coverImage}" 
+                                     alt="Cover of ${book.title}" 
+                                     class="book-cover">
+                            </div>
                             <div class="book-details">
                                 <strong>ISBN:</strong> ${book.isbn} <br>
                                 <strong >Title:</strong> ${book.title} <br>
@@ -26,8 +35,8 @@ $(document).ready(function() {
                             </div>
                             <button class="remove-from-cart-btn" data-book-id="${book.id}">Remove from Cart</button> <br>
                         </li>`;
-                    });
-                    $("#cartItems").append(cartHtml);
+                });
+                $("#cartItems").append(cartHtml);
             });
             // remove from cart button functionality
             $(".remove-from-cart-btn").on("click", function() {

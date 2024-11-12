@@ -18,6 +18,22 @@ public class Cart {
 
     private int cartSize = 0;
 
+    /**
+     * Empty constructor
+     */
+    public Cart(){
+
+    }
+
+    /**
+     * Basic constructor for cart
+     * @param books
+     * @param cartSize
+     */
+    public Cart(List<Book> books, int cartSize) {
+        this.books = books;
+        this.cartSize = cartSize;
+    }
 
     /**
      * Set Cart Id
@@ -78,5 +94,13 @@ public class Cart {
     public void removeBookFromCart(Book book){
         books.remove(book);
         cartSize--;
+    }
+
+    /**
+     * Clear cart of all books
+     */
+    public void clearCart(){
+        this.books.clear();
+        cartSize = 0;
     }
 }

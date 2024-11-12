@@ -96,20 +96,34 @@ public class CartController {
      */
     @DeleteMapping("/removeFromCart")
     public ResponseEntity<String> removeFromCart(@RequestParam Long bookID) {
-            Optional<Book> bookToRemove = bookInventory.findById(bookID);
-            if (bookToRemove.isPresent()) {
-                for (Book book : cart.getBooks()) {
-                    if (book.getId().equals(bookID)) {
-                        cart.removeBookFromCart(book);
-                        cartRepository.save(cart);
-                        return ResponseEntity.ok("Book removed from cart successfully.");
-                    }
+        Optional<Book> bookToRemove = bookInventory.findById(bookID);
+        if (bookToRemove.isPresent()) {
+            for (Book book : cart.getBooks()) {
+                if (book.getId().equals(bookID)) {
+                    cart.removeBookFromCart(book);
+                    cartRepository.save(cart);
+                    return ResponseEntity.ok("Book removed from cart successfully.");
                 }
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: Book not found in the cart.");
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: Book not found in the inventory.");
             }
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: Book not found in the cart.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: Book not found in the inventory.");
+        }
     }
 
-
+    /**
+     * Clears the cart of all books
+     * @return
+     */
+    @PostMapping("/clearCart")
+    public ResponseEntity<String> emptyCart() {
+        try {
+            cart.clearCart();
+            cartRepository.save(cart);
+            return ResponseEntity.ok("Cart has been cleared successfully.");
+        } catch (Exception e) {
+            System.out.println("Failed to clear the cart.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: Could not clear the cart.");
+        }
+    }
 }

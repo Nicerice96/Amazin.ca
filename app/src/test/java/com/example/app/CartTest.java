@@ -104,4 +104,18 @@ class CartTest {
         cart.removeBookFromCart(book2);
         assertEquals(0, cart.getCartSize());
     }
+
+    @Test
+    void testClearCart(){
+        cart.addBookToCart(book1);
+        cart.addBookToCart(book2);
+        cart.addBookToCart(book3);
+
+        assertEquals(3, cart.getCartSize());
+
+        cart.clearCart();
+        assertEquals(0, cart.getCartSize());
+        assertTrue(cart.getBooks().isEmpty());
+
+    }
 }
