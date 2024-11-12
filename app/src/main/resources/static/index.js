@@ -15,6 +15,7 @@ $(document).ready(function() {
 
                 // Generate HTML for each book item
                 const bookItem = `
+                    <link rel="stylesheet" href="/indexstylesheet.css">
                     <li class="book-item">
                         <div class="image-container">
                             <img src="${coverImage}" 

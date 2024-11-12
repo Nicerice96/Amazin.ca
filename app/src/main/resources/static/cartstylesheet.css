@@ -93,8 +93,12 @@ body{
     text-decoration: none;
 }
 
-#cart{
-    padding-right: 10px;
+#cart {
+    margin-left: 10px;
+    color: aliceblue;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 #cart a:visited{
     font-family: 'Arial Black', Arial, sans-serif;
@@ -149,4 +153,23 @@ body{
 
 .book-details {
     flex-grow: 1;
+}
+
+.remove-from-cart-btn {
+    padding: 8px 16px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.remove-from-cart-btn {
+    background-color: #ff4444;
+    color: white;
+}
+
+.remove-from-cart-btn {
+    background-color: #cc0000;
 }

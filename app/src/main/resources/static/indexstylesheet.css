@@ -154,6 +154,25 @@ body {
     gap: 0.5rem;
 }
 
+.add-to-cart {
+    padding: 8px 16px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart {
+    background-color: slategray;
+    color: white;
+}
+
+.add-to-cart {
+    background-color: #445566;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     #header {

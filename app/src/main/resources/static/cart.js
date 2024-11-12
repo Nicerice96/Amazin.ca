@@ -17,19 +17,20 @@ $(document).ready(function() {
                         <ul>`;
                     cart.books.forEach(book => {
                         cartHtml += `
+                        <link rel="stylesheet" href="/cartstylesheet.css">
                         <li>
                             <div class="book-details">
                                 <strong>ISBN:</strong> ${book.isbn} <br>
                                 <strong >Title:</strong> ${book.title} <br>
                                 <strong>Author:</strong> ${book.author}
                             </div>
-                            <button class="removeFromCartButton" data-book-id="${book.id}">Remove from Cart</button>
+                            <button class="remove-from-cart-btn" data-book-id="${book.id}">Remove from Cart</button> <br>
                         </li>`;
                     });
                     $("#cartItems").append(cartHtml);
             });
             // remove from cart button functionality
-            $(".removeFromCartButton").on("click", function() {
+            $(".remove-from-cart-btn").on("click", function() {
                 const bookId = $(this).data("book-id");
                 $.ajax({
                     url: `/cart/removeFromCart?bookID=${bookId}`,
