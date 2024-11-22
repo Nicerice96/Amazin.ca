@@ -65,6 +65,7 @@ public class BookController {
                 System.out.println(book.getISBN());
                 System.out.println(book.getAuthor());
                 System.out.println(book.getTitle());
+                System.out.println(book.getQuantity());
                 System.out.println(book.getCoverImage());
                 System.out.println("Book id = " + book.getId());
             }
@@ -88,11 +89,12 @@ public class BookController {
         @RequestParam int ISBNnum,
         @RequestParam String title,
         @RequestParam String author,
+        @RequestParam int quantity,
         @RequestParam("coverImage") MultipartFile coverImage
     ) {
         try {
             System.out.println("isbn number added: " + ISBNnum);
-            Book book = new Book(ISBNnum, title, author);
+            Book book = new Book(ISBNnum, title, author, quantity);
             book.setCoverImage(coverImage.getBytes()); // Save the image data
             Book savedBook = bookInventory.save(book);
             System.out.println("Cover image size: " + coverImage.getSize() + " bytes");
@@ -134,6 +136,7 @@ public class BookController {
         @RequestParam("isbn") int isbn,
         @RequestParam("title") String title,
         @RequestParam("author") String author,
+        @RequestParam("quantity") int quantity,
         @RequestParam(value = "coverImage", required = false) MultipartFile coverImage
     ) {
         Optional<Book> books = bookInventory.findById(id);
@@ -142,6 +145,7 @@ public class BookController {
             book.setISBN(isbn);
             book.setAuthor(author);
             book.setTitle(title);
+            book.setQuantity(quantity);
             try {
                 book.setCoverImage(coverImage.getBytes());
 

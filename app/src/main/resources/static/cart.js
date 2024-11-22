@@ -35,7 +35,8 @@ $(document).ready(function() {
                             <strong>Title:</strong> ${book.title} <br>
                             <strong>Author:</strong> ${book.author}
                         </div>
-                        <button class="removeFromCartButton" data-book-id="${book.id}">Remove item</button>
+                        <button class="removeFromCartButton checkoutFromCartButton" data-book-id="${book.id}">Remove item</button>
+                        <button class="removeFromCartButton checkoutFromCartButton">Checkout</button>
                     </li>
                 `);
             });

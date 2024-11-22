@@ -19,6 +19,7 @@ public class Book {
     String title;
     String author;
     int ISBNnum;
+    int quantity;
     @Lob
     byte [] coverImage;
 
@@ -34,10 +35,11 @@ public class Book {
      * @param title the title of the book
      * @param author the author of the book
      */
-    public Book(int ISBNnum, String title, String author){
+    public Book(int ISBNnum, String title, String author, int quantity){
         this.ISBNnum = ISBNnum;
         this.title = title;
         this.author = author;
+        this.quantity = quantity;
     }
 
     /**
@@ -110,6 +112,24 @@ public class Book {
      */
     public void setAuthor(String author){
         this.author = author;
+    }
+
+    /**
+     * Returns the quantity of the books in stock.
+     *
+     * @return the ID of the book
+     */
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    /**
+     * Sets the ID of the book.
+     *
+     * @param quantity the quantity to set
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     /**

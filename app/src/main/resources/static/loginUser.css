@@ -6,24 +6,24 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Arial Black', Arial, sans-serif;
-  background: #232f3e; 
+  background: #232f3e;
 }
 
 #userLoginForm {
   background-color: #ffffff;
-  padding: 2rem; /* Reduced padding to be more compact */
-  border-radius: 6px; /* Subtle border radius */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 90%;
-  width: 350px; /* Reduced width for compact look */
+  width: 350px;
 }
 
 #userLoginForm h1 {
   color: #111;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
-  font-weight: 500; /* Lighter font weight for header */
+  font-weight: 500;
 }
 
 #userLoginForm label {
@@ -40,7 +40,6 @@ body {
   padding: 0.7rem;
   margin-top: 0.5rem;
   margin-bottom: 1.2rem;
-  margin: auto;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -48,17 +47,42 @@ body {
 
 #userLoginForm button[type="submit"] {
   display: inline-block;
-  padding: 0.7rem 1.5rem; 
+  padding: 0.7rem 1.5rem;
   font-size: 1rem;
-  background-color: #febd69; 
-  color: #111; 
-  border: 1px solid #f3a847; 
+  background-color: #febd69;
+  color: #111;
+  border: 1px solid #f3a847;
   border-radius: 4px;
   transition: all 0.2s ease;
   cursor: pointer;
-  width: 100%; 
+  width: 100%;
 }
 
 #userLoginForm button[type="submit"]:hover {
   background-color: #f3a847;
+}
+
+#loginError {
+  margin-top: 1rem;
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+  text-align: center;
+}
+
+#signUpOption {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#signUpOption a {
+  color: #febd69;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#signUpOption a:hover {
+  color: #f3a847;
+  text-decoration: underline;
 }
