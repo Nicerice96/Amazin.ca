@@ -35,11 +35,10 @@ public class Book {
      * @param title the title of the book
      * @param author the author of the book
      */
-    public Book(int ISBNnum, String title, String author, int quantity){
+    public Book(int ISBNnum, String title, String author){
         this.ISBNnum = ISBNnum;
         this.title = title;
         this.author = author;
-        this.quantity = quantity;
     }
 
     /**

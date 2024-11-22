@@ -94,7 +94,8 @@ public class BookController {
     ) {
         try {
             System.out.println("isbn number added: " + ISBNnum);
-            Book book = new Book(ISBNnum, title, author, quantity);
+            Book book = new Book(ISBNnum, title, author);
+            book.setQuantity(quantity);
             book.setCoverImage(coverImage.getBytes()); // Save the image data
             Book savedBook = bookInventory.save(book);
             System.out.println("Cover image size: " + coverImage.getSize() + " bytes");
