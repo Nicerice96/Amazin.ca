@@ -62,3 +62,28 @@ body {
 #adminLoginForm button[type="submit"]:hover {
   background-color: #f3a847;
 }
+
+#loginError {
+  margin-top: 1rem;
+  color: red;
+  font-size: 0.9rem;
+  display: none;
+  text-align: center;
+}
+
+#signUpOption {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+#signUpOption a {
+  color: #febd69;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#signUpOption a:hover {
+  color: #f3a847;
+  text-decoration: underline;
+}

@@ -114,6 +114,24 @@ public class Book {
     }
 
     /**
+     * Returns the quantity of the books in stock.
+     *
+     * @return the ID of the book
+     */
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    /**
+     * Sets the ID of the book.
+     *
+     * @param quantity the quantity to set
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    /**
      * Returns the cover image of the book.
      *
      * @return the cover image of the book
@@ -129,15 +147,5 @@ public class Book {
      */
     public void setCoverImage(byte[] coverImage) {
         this.coverImage = coverImage;
-    }
-
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
-
-    }
-
-    public int getQuantity(){
-        return this.quantity;
-
     }
 }
