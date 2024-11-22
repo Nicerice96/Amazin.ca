@@ -61,14 +61,13 @@ public class UserController {
      */
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestParam String username, @RequestParam String password) {
-        Iterable<User> users = userRepository.findAll();
+        User user = userRepository.findByUsername(username);
 
-        for (User user : users) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                System.out.println("Login Success!");
-                return ResponseEntity.ok(user);
-            }
+        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            System.out.println("Login Success!");
+            return ResponseEntity.ok(user);
         }
+
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
@@ -83,5 +82,21 @@ public class UserController {
         }
         return null;
     }
-    
+
+    /**
+     * Verify user/admin password
+     * @param username username of the user/admin
+     * @param password passsword of the user/admin
+     * @return ResponseEntity with the user if verification is successful, or HTTP status code
+     */
+    @PostMapping("/verifyPassword")
+    public ResponseEntity<String> verifyPassword(@RequestParam String username, @RequestParam String password) {
+        User user = userRepository.findByUsername(username);
+        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            return ResponseEntity.ok("Password verified successfully");
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Incorrect username or password");
+    }
+
+
 }

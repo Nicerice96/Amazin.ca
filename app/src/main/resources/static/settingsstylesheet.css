@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* Header Styles */
+#header {
+    background-color: #232f3e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#titleContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#logo {
+    width: 200px;
+    height: 100px;
+}
+
+
+#searchContainer {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 2rem;
+}
+
+#searchForm {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#search {
+    flex: 1;
+    color: #333;
+    background-color: white;
+    padding: 16px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#search:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.5);
+}
+
+#search::placeholder {
+    color: #666;
+}
+
+#searchButton {
+    background-color: #febd69;
+    border: none;
+    cursor: pointer;
+    padding: 18.5px 15px;
+    border-radius: 0 4px 4px 0;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+#searchButton:hover {
+    background-color: #f3a847;
+}
+
+/* Navigation Links */
+#login a {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+#login a:hover {
+    color: #232f3e;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+
+/* Responsive additions */
+@media (max-width: 768px) {
+    #cartButton {
+        padding: 6px;
+    }
+
+    .cart-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+/* Subheader Bar */
+#subheaderbar {
+    background-color: #232f3e;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #header {
+        padding: 0.5rem;
+    }
+
+}
+
+
+#settings{
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Settings menu */
+#settings-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #232f3e;
+    padding: 10px 0;
+    margin: 0;
+}
+
+#settings-menu button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #febd69;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#settings-menu button:hover {
+    background-color: #333;
+}
+
+/* Settings actions */
+#settings-actions {
+    padding: 20px;
+}
+
+.settings-section {
+    display: none;
+}
+
+#home {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.home-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* Makes the icon white */
+}
+
+.text-entry {
+    width: 25%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-entry:focus {
+    border-color: #febd69;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 189, 105, 0.5);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.submit-button {
+    background-color: #232f3e;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #febd69;
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    background-color: #f3a847;
+}

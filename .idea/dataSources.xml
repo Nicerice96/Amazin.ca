@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="testdb" uuid="82b53cfd-b6bb-49f5-9b1a-d2c46ffbd206">
-      <driver-ref>h2.unified</driver-ref>
+    <data-source source="LOCAL" name="postgres@localhost" uuid="dc087d1f-95da-458d-9c72-3b3c5eaa3013">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:mem:testdb</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="amazin_db@34.47.4.85" uuid="094e3e62-7cf2-4e7b-b489-d89027ddd0a7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://34.47.4.85:5432/amazin_db</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

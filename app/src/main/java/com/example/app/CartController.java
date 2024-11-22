@@ -19,8 +19,6 @@ public class CartController {
     @Autowired
     private BookInventory bookInventory;
     @Autowired
-    private Cart cart;
-    @Autowired
     private CartRepository cartRepository;
     @Autowired 
     private UserRepository userRepository;
@@ -66,7 +64,7 @@ public class CartController {
      * @return RepsonseEntity
      */
     @PostMapping("/addToCart")
-    public ResponseEntity<String> addToCart(@RequestParam Long bookID, @RequestParam String username){
+    public ResponseEntity<String> addToCart(@RequestParam Long bookID, @RequestParam String username) {
         // find if book exists in inventory
         Iterable<Book> books = bookInventory.findAll();
 
@@ -78,20 +76,34 @@ public class CartController {
                 Iterable<User> users = userRepository.findAll();
 
                 for (User user : users){
+
                     if (user.getUsername().equals(username)){
-                        user.getCart().addBookToCart(foundBook);
-                        System.out.println("Added:" + book.getTitle() + " To: " + user.getUsername() + " Cart Contents: " + user.getCart().getBooks().toString());
-                        userRepository.save(user);
-                        return ResponseEntity.ok("Book added to cart successfully.");
+
+                        int count = 0;
+                        for (Book book_cart : user.getCart().getBooks()){
+                            
+                            if (book_cart.title.equals(foundBook.getTitle())){
+                                count++;
+                            }
+                        }
+
+                        if (count < foundBook.getQuantity()){
+                            user.getCart().addBookToCart(foundBook);
+                            System.out.println("Added:" + book.getTitle() + " To: " + user.getUsername() + " Cart Contents: " + user.getCart().getBooks().toString());
+                            userRepository.save(user);
+                            return ResponseEntity.ok("Book added to cart successfully.");
+                        }
+                        else{
+                            return ResponseEntity.ok("Cannot add another book.");
+                        }
+
                     }
+               
                 } 
             }
+            
         }
-        
-        
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: Book not found.");
-        
-
+        return ResponseEntity.ok("Could not find book");
     }
 
     /**

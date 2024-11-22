@@ -70,32 +70,28 @@ body {
   }
 
 #home {
-    margin-left: auto;
-    text-decoration: none;
-}
-
-#home a {
-    font-family: 'Arial Black', Arial, sans-serif;
-    text-decoration: none;
-    color: #ffffff;
-    padding: 10px 15px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
     border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#home a:visited {
-    text-decoration: none;
-    color: #ffffff;
-    
-}
-
-#home a:hover {
-    text-decoration: none;
-    color: #d5d9d9;
-    background-color: rgba(255, 255, 255, 0.1);
+#home:hover {
+    background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
-    
+}
+
+.home-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* Makes the icon white */
 }
 
 

@@ -1,52 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
-    }
-
-    .box {
-      background: white;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      padding: 40px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .box button {
-      display: block;
-      width: 200px;
-      margin: 10px auto;
-      padding: 15px;
-      font-size: 18px;
-      color: white;
-      background-color: #007BFF;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .box button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Settings</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/settingsstylesheet.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/settings.js"></script>
 </head>
 <body>
-<div class="box">
-  <button>Change Username</button>
-  <button>Change Password</button>
+<div id="header">
+  <h1 id="settings">Settings</h1>
+  <h2 id="home"><a href="/"><img src="/home.png" alt="Home" class="home-icon"></a></h2>
+</div>
+
+<div id="settings-menu">
+  <button id="change-username">Change Username</button>
+  <button id="change-password">Change Password</button>
+  <button id="delete-account">Delete Account</button>
+</div>
+
+<div id="settings-actions">
+  <div id="change-username-section" class="settings-section" style="display:none;">
+    <h3>Change Username</h3>
+    <form id="change-username-form">
+      <label for="new-username">New Username:</label>
+      <input type="text" id="new-username" class="text-entry" name="new-username" required>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
+
+  <div id="change-password-section" class="settings-section" style="display:none;">
+    <h3>Change Password</h3>
+    <form id="change-password-form">
+      <label for="current-password">Current Password:</label>
+      <input type="password" id="current-password" class="text-entry" name="current-password" required>
+      <label for="new-password">New Password:</label>
+      <input type="password" id="new-password" class="text-entry" name="new-password" required>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
+
+  <div id="delete-account-section" class="settings-section" style="display:none;">
+    <h3>Delete Account</h3>
+    <form id="delete-account-form">
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" class="text-entry" name="confirm-password" required>
+      <button type="submit" class="submit-button">Delete Account</button>
+    </form>
+  </div>
 </div>
 </body>
 </html>

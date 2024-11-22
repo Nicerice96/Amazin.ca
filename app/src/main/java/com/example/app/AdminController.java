@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-
-
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -46,13 +44,11 @@ public class AdminController {
      */
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
-        Iterable<Admin> admins = adminRepository.findAll();
+        Admin admin = adminRepository.findByUsername(username);
     
-        for (Admin admin : admins) {
-            if (admin.getUsername().equals(username) && admin.getPassword().equals(password)) {
-                System.out.println("Login Success!");
-                return ResponseEntity.ok("Login successful!");
-            }
+        if (admin.getUsername().equals(username) && admin.getPassword().equals(password)) {
+            System.out.println("Login Success!");
+            return ResponseEntity.ok("Login successful!");
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
     }
