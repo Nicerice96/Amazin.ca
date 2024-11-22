@@ -148,14 +148,4 @@ public class Book {
     public void setCoverImage(byte[] coverImage) {
         this.coverImage = coverImage;
     }
-
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
-
-    }
-
-    public int getQuantity(){
-        return this.quantity;
-
-    }
 }
