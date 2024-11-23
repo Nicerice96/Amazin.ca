@@ -43,14 +43,17 @@ public class AdminController {
      * @return
      */
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
+    public ResponseEntity<Admin> login(@RequestParam String username, @RequestParam String password) {
         Admin admin = adminRepository.findByUsername(username);
     
         if (admin.getUsername().equals(username) && admin.getPassword().equals(password)) {
             System.out.println("Login Success!");
-            return ResponseEntity.ok("Login successful!");
+            //return ResponseEntity.ok("Login successful!");
+            return ResponseEntity.ok(admin);
+
         }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+        //return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
     /**
      * Admin Registration 

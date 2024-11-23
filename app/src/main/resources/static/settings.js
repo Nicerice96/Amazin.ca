@@ -80,22 +80,28 @@ $(document).ready(function() {
         const oldUsername = $("#old-username").val();
         const newUsername = $("#new-username").val();
 
-        $.ajax({
-            type: "POST",
-            url: "/settings/changeUsername",
-            data: {
-                oldUsername: oldUsername,
-                newUsername: newUsername
-            },
-            success: function(response) {
-                alert("Username changed successfully!");
-                sessionStorage.setItem("username", newUsername);
-                location.reload(); // refresh page to ensure the fields are cleared for next use
-            },
-            error: function(xhr, status, error) {
-                alert("Error changing username: " + error);
-            }
-        });
+        if (oldUsername === sessionStorage.getItem("username")) {
+            $.ajax({
+                type: "POST",
+                url: "/settings/changeUsername",
+                data: {
+                    oldUsername: oldUsername,
+                    newUsername: newUsername
+                },
+                success: function (response) {
+                    alert("Username changed successfully!");
+                    sessionStorage.setItem("username", newUsername);
+                    location.reload(); // refresh page to ensure the fields are cleared for next use
+                },
+                error: function (xhr, status, error) {
+                    alert("Error changing username: " + error);
+                }
+            });
+        }
+        else {
+            alert("The username provided does not match the logged-in user's username.");
+        }
+
     });
 
     $(document).on("submit", "#change-password-form", function(event) {
@@ -128,25 +134,30 @@ $(document).ready(function() {
         const username = $("#username").val();
         const password = $("#password").val();
 
-        if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
-            $.ajax({
-                type: "DELETE",
-                url: "/settings/deleteAccount",
-                data: {
-                    username: username,
-                    password: password,
-                },
-                success: function (response) {
-                    alert("Your account has been deleted successfully.");
-                    // redirect to log in page as user's account no longer exists so is no longer logged in
-                    window.location.href = "/loginEntry";
-                },
-                error: function (xhr, status, error) {
-                    alert("Error deleting account: " + error);
-                },
-            });
+        if (username === sessionStorage.getItem("username")) {
+            if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+                $.ajax({
+                    type: "DELETE",
+                    url: "/settings/deleteAccount",
+                    data: {
+                        username: username,
+                        password: password,
+                    },
+                    success: function (response) {
+                        alert("Your account has been deleted successfully.");
+                        // redirect to log in page as user's account no longer exists so is no longer logged in
+                        window.location.href = "/loginEntry";
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error deleting account: " + error);
+                    },
+                });
+            } else {
+                alert("Account deletion canceled.");
+            }
         } else {
-            alert("Account deletion canceled.");
+            alert("The username provided does not match the logged-in user's username.");
         }
     });
+
 });
