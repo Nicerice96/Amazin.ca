@@ -24,6 +24,8 @@ public class Book {
     int quantity;
     @Lob
     byte [] coverImage;
+    
+    double price;
 
     /**
      * Default constructor.
@@ -143,6 +145,13 @@ public class Book {
 
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     public void setCoverImageOnInstantiation(Book book, String bookCoverPath){
         try {

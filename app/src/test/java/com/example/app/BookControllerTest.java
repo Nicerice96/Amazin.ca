@@ -84,6 +84,7 @@ public class BookControllerTest {
                 "Test Book",
                 "Test Author",
                 5,
+                10,
                 coverImage
         );
 

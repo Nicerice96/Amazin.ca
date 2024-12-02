@@ -69,6 +69,7 @@ public class BookController {
                 System.out.println(book.getAuthor());
                 System.out.println(book.getTitle());
                 System.out.println(book.getCoverImage());
+                System.out.println(book.getPrice());
                 System.out.println("Book id = " + book.getId());
             }
                                 
@@ -84,6 +85,7 @@ public class BookController {
      * @param title
      * @param author
      * @param coverImage
+     * @param price
      * @return
      */
     @PostMapping("/add")
@@ -92,12 +94,14 @@ public class BookController {
         @RequestParam String title,
         @RequestParam String author,
         @RequestParam int quantity,
+        @RequestParam double price,
         @RequestParam("coverImage") MultipartFile coverImage
     ) {
         try {
             System.out.println("isbn number added: " + ISBNnum);
             Book book = new Book(ISBNnum, title, author);
             book.setQuantity(quantity);
+            book.setPrice(price);
             book.setCoverImage(coverImage.getBytes()); 
             Book savedBook = bookInventory.save(book);
             System.out.println("Cover image size: " + coverImage.getSize() + " bytes");
@@ -140,6 +144,7 @@ public class BookController {
         @RequestParam("title") String title,
         @RequestParam("author") String author,
         @RequestParam("quantity") int quantity,
+        @RequestParam("price") double price,
         @RequestParam(value = "coverImage", required = false) MultipartFile coverImage
     ) {
         Optional<Book> books = bookInventory.findById(id);
@@ -149,6 +154,7 @@ public class BookController {
             book.setAuthor(author);
             book.setTitle(title);
             book.setQuantity(quantity);
+            book.setPrice(price);
             try {
                 book.setCoverImage(coverImage.getBytes());
 
@@ -158,11 +164,7 @@ public class BookController {
             }
 
             bookInventory.save(book);
-
             return ResponseEntity.ok("Book Updated");
-
-            
-
         }
         else{
             return ResponseEntity.ok("No Book Found");
@@ -197,49 +199,69 @@ public class BookController {
         switch (sortBy){
 
             case "title A-Z":
-            try {
-                List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
-                books.sort(Comparator.comparing(Book::getTitle)); 
-                System.out.println("Sorting by Title A-Z");
-                return ResponseEntity.ok(books);
-            } catch (Exception e) {
-                System.out.println("Failed to retrieve and sort books.");
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
+                try {
+                    List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
+                    books.sort(Comparator.comparing(Book::getTitle));
+                    System.out.println("Sorting by Title A-Z");
+                    return ResponseEntity.ok(books);
+                } catch (Exception e) {
+                    System.out.println("Failed to retrieve and sort books.");
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
             case "title Z-A":
-            try{
-                List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
-                books.sort(Comparator.comparing(Book::getTitle).reversed());
-                return ResponseEntity.ok(books);
-             
-            }catch (Exception e){
-                System.out.println(e);
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
+                try{
+                    List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
+                    books.sort(Comparator.comparing(Book::getTitle).reversed());
+                    return ResponseEntity.ok(books);
+
+                } catch (Exception e){
+                    System.out.println(e);
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
 
             case "authour A-Z":
-            try{
-                List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
-                books.sort(Comparator.comparing(Book::getAuthor));
-                return ResponseEntity.ok(books);
+                try{
+                    List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
+                    books.sort(Comparator.comparing(Book::getAuthor));
+                    return ResponseEntity.ok(books);
 
-            }
-            catch(Exception e){
-                System.out.println(e);
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
+                } catch(Exception e){
+                    System.out.println(e);
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
 
             case "authour Z-A":
-            try{
-                List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
-                books.sort(Comparator.comparing(Book::getAuthor).reversed());
-                return ResponseEntity.ok(books);
+                try{
+                    List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
+                    books.sort(Comparator.comparing(Book::getAuthor).reversed());
+                    return ResponseEntity.ok(books);
 
-            }
-            catch(Exception e){
-                System.out.println(e);
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
+                } catch(Exception e){
+                    System.out.println(e);
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
+
+            case "price low to high":
+                try{
+                    List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
+                    books.sort(Comparator.comparing(Book::getPrice));
+                    return ResponseEntity.ok(books);
+
+                } catch(Exception e){
+                    System.out.println(e);
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
+
+            case "price high to low":
+                try{
+                    List<Book> books = StreamSupport.stream(bookInventory.findAll().spliterator(), false).collect(Collectors.toList());
+                    books.sort(Comparator.comparing(Book::getPrice).reversed());
+                    return ResponseEntity.ok(books);
+
+                } catch(Exception e){
+                    System.out.println(e);
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }
 
         }
 
