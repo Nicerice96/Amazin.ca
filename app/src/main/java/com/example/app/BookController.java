@@ -93,8 +93,8 @@ public class BookController {
         @RequestParam int ISBNnum,
         @RequestParam String title,
         @RequestParam String author,
-        @RequestParam int quantity,
         @RequestParam double price,
+        @RequestParam int quantity,
         @RequestParam("coverImage") MultipartFile coverImage
     ) {
         try {
