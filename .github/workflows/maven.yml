@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI
 
 on:
   push:
@@ -23,6 +23,40 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+
+      
+    - name: Install Trivy
+      run: |
+          sudo apt-get update
+          sudo apt-get install wget apt-transport-https gnupg lsb-release -y
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+          echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install trivy -y
+
+    - name: Download Trivy HTML Template
+      run: |
+          wget -O trivy-html.tpl https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
+
+    - name: Scan project and generate HTML report
+      run: |
+          trivy fs . --format template --template "@trivy-html.tpl" -o trivy-fs-report.html
+
+    - name: Generate SBOM (CycloneDX)
+      run: trivy fs --format cyclonedx --output sbom.cdx.json .
+
+    - name: Scan SBOM for vulnerabilities and generate HTML report
+      run: |
+          trivy sbom --format template --template "@trivy-html.tpl" -o trivy-sbom-report.html sbom.cdx.json
+
+    - name: Upload Trivy Reports
+      uses: actions/upload-artifact@v4
+      with:
+          name: trivy-html-reports
+          path: |
+            trivy-fs-report.html
+            trivy-sbom-report.html
+            sbom.cdx.json
 
     - name: Build with Maven
       run: mvn -B package -f app/pom.xml
