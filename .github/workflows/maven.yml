@@ -38,16 +38,25 @@ jobs:
       run: |
           wget -O trivy-html.tpl https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
 
-    - name: Scan project and generate HTML report
+
+    - name: Scan JAR for vulnerabilities and generate HTML report
       run: |
-          trivy fs . --format template --template "@trivy-html.tpl" -o trivy-fs-report.html
+          trivy fs target/app-0.0.1-SNAPSHOT.jar \
+            --format template \
+            --template "@trivy-html.tpl" \
+            -o trivy-fs-report.html
 
-    - name: Generate SBOM (CycloneDX)
-      run: trivy fs --format cyclonedx --output sbom.cdx.json .
+    
+    - name: Generate SBOM (CycloneDX) from JAR
+      run: trivy sbom --format cyclonedx --output sbom.cdx.json target/app-0.0.1-SNAPSHOT.jar
 
+    
     - name: Scan SBOM for vulnerabilities and generate HTML report
       run: |
-          trivy sbom --format template --template "@trivy-html.tpl" -o trivy-sbom-report.html sbom.cdx.json
+          trivy sbom --format template \
+            --template "@trivy-html.tpl" \
+            -o trivy-sbom-report.html \
+            sbom.cdx.json
 
     - name: Upload Trivy Reports
       uses: actions/upload-artifact@v4
