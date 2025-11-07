@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="/adminstylesheet.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/admin.js"></script>
+
+    </head>
+    <body>
+
+        <div id = "header">
+            <img id="logo" src = "/AmazinInsiders.png">
+            <div id = "searchContainer">
+                <form id = "searchForm">
+                    <label for="search"></label>
+                    <input type="text" id = "search" placeholder = "search..."q>
+                    <button type = "submit" id = "searchButton">
+                        <img src="/search-icon.png" alt="Search" style="width: 11px; height: 11px;">
+                    </button>
+                </form>
+            </div>
+            <h2 id = "addBook"><a href = "/book/adminAddBookPage"><img src="/addBook.png" class = "add-icon"></a></h2>
+
+          
+            <a href="/settings/settingsEntry" id = "settingsButton">
+                <img src="/Settings.png" alt="Settings" class="settings-icon">
+            </a>
+  
+
+
+            <a href="/" id= "logoutButton">
+                <img src="/Logout.png" alt="Log Out" class="logout-icon">
+            </a>
+
+
+
+        </div>
+        <div id = "subheaderbar">
+            <label>Sort By</label>
+            <select id = "sort">
+                <option value="clear filters">Clear Filters</option>
+                <option value="title A-Z">Title A-Z</option>
+                <option value="title Z-A">Title Z-A</option>
+                <option value="authour A-Z">Authour A-Z</option>
+                <option value="authour Z-A">Authour Z-A</option>
+                <option value="price high to low">Price High to Low</option>
+                <option value="price low to high">Price Low to High</option>
+            </select>
+        </div>
+
+        <ul id="bookList"></ul>
+
+        <div id="footer">
+    
+            <div id = "footerLinks">
+                <a href="/admin/home">home</a>
+                <label>|</label>
+                <a href="/settings/settingsEntry">settings</a>
+            </div>
+            <div id="footerInfo">
+                <p>Amazin.ca</p>
+                <p>All rights reserved</p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/adminaddbookpage.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src = "/adminAddBook.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a href = "/admin/home"><img id="logo" src="/AmazinInsiders.png"></a>
+            
+
+        </div>
+        <div id = "subheaderbar">
+
+        </div>
+
+        <form id="createBookForm" enctype="multipart/form-data">
+            <input type="number" id="ISBNnum" name="ISBNnum" placeholder="Enter ISBN">
+            <input type="text" id="titleText" name="title" placeholder="Enter Title" required>
+            <input type="text" id="authorText" name="author" placeholder="Enter Author" required>
+            <input type = "number" id="quantityNum" name="quantity" placeholder="Enter Quantity" required>
+            <input type = "number" id="price" name="price" placeholder="Enter price" required>
+            <input type="file" id="coverImage" name="coverImage" accept="image/*" required>
+            <button type="submit">Add Book</button> 
+        </form>
+        
+        
+
+    </body>
+</html>

@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: #232f3e; 
+}
+
+#SignUp {
+    background-color: #ffffff;
+    padding: 2rem 2.5rem; 
+    border-radius: 6px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    max-width: 90%;
+    width: 350px; 
+}
+
+#SignUp h2 {
+    color: #111;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500; 
+}
+
+#SignUp label {
+    font-size: 0.9rem;
+    color: #111;
+    margin-bottom: 0.3rem;
+    display: block;
+    text-align: left;
+}
+
+#SignUp input[type="text"],
+#SignUp input[type="password"],
+#SignUp input[type="email"] {
+    width: calc(100% - 1rem); 
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+#SignUp button[type="submit"] {
+    display: inline-block;
+    padding: 0.7rem 1.5rem; 
+    font-size: 1rem;
+    background-color: #febd69; 
+    color: #111; 
+    border: 1px solid #f3a847; 
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    width: 100%; 
+    margin-top: 1.5rem;
+}
+
+#SignUp button[type="submit"]:hover {
+    background-color: #f3a847;
+}
+
+/* Existing styles remain the same */
+
+#confirmation {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+}
+
+#confirmation.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#confirmation.fail {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+

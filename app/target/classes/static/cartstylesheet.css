@@ -1,0 +1,240 @@
+body {
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  color: #111;
+}
+
+/* Header Section */
+#header {
+  background-color: #232f3e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  height: 80px;
+}
+
+#logo {
+  width: 200px;
+  height: 100px;
+  padding-left: 5px;
+  padding-bottom: 25px;
+  padding-top: 35px;
+}
+
+/* Subheader Bar */
+#subheaderbar {
+  background-color: #37475a;
+  height: 50px;
+  margin-top: -10px; /* Smooth transition under the header */
+}
+
+/* Cart Items List */
+#cartItems {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 0;
+}
+
+
+.book-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.book-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  width: 150px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-item:hover .book-cover {
+  transform: scale(1.05);
+}
+
+.book-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.book-details strong {
+  color: #232f3e;
+  font-size: 1rem;
+}
+#checkoutAll {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+#checkoutAll:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.checkoutAll-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+#clearCart {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+#clearCart:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.clearCart-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Remove from Cart Button */
+.removeFromCartButton, 
+.checkoutFromCartButton {
+  background-color: #febd69;
+  color: #111;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+.removeFromCartButton:hover,
+.checkoutFromCartButton:hover {
+  background-color: #f3a847;
+  transform: translateY(-1px);
+}
+#subTotalContainer {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  font-size: 1.2rem;
+  color: #111;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  background-color: #f3f3f3; /* Light gray background similar to Amazon */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  border-top: 2px solid #e7e7e7; /* Lighter border for separation */
+  border-radius: 8px 8px 0 0; /* Rounded corners at the top */
+}
+
+#subTotalText {
+  font-weight: bold;
+  color: #232f3e; /* Amazon-style dark color */
+  margin-left: 10px;
+}
+
+#amount {
+  font-weight: bold;
+  color: #b12704; /* Amazon's signature red for the amount */
+  margin-right: 10px;
+}
+
+#emptyCartMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #666;
+  font-size: 1.5rem;
+  font-style: italic;
+  width: 100%;
+  max-width: 300px;
+  z-index: 10;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+  }
+
+  .image-container {
+      width: 100px;
+      height: 140px;
+  }
+
+  .book-details {
+      text-align: center;
+  }
+
+  .removeFromCartButton {
+      margin: 1rem auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #cartContainer {
+      padding: 0 10px;
+  }
+
+  .book-item {
+      margin: 10px 0;
+  }
+}
