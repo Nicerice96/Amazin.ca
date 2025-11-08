@@ -1,0 +1,127 @@
+Date : 2025-09-02 10:58:09
+Directory : /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca
+Total : 72 files,  5028 codes, 650 comments, 1065 blanks, all 6743 lines
+
+Languages
++-----------------+------------+------------+------------+------------+------------+
+| language        | files      | code       | comment    | blank      | total      |
++-----------------+------------+------------+------------+------------+------------+
+| Java            |         31 |      1,731 |        535 |        513 |      2,779 |
+| PostCSS         |          9 |      1,646 |         51 |        274 |      1,971 |
+| JavaScript      |          8 |        932 |         20 |        161 |      1,113 |
+| HTML            |          9 |        289 |          1 |         61 |        351 |
+| XML             |          9 |        223 |          0 |          4 |        227 |
+| Batch           |          1 |        108 |         26 |         16 |        150 |
+| Markdown        |          1 |         61 |          0 |         24 |         85 |
+| YAML            |          2 |         25 |          1 |          6 |         32 |
+| Java Properties |          2 |         13 |         16 |          6 |         35 |
++-----------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                        | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                           |         72 |      5,028 |        650 |      1,065 |      6,743 |
+| . (Files)                                                                                                                   |          1 |         61 |          0 |         24 |         85 |
+| .github                                                                                                                     |          1 |         21 |          1 |          6 |         28 |
+| .github/workflows                                                                                                           |          1 |         21 |          1 |          6 |         28 |
+| .idea                                                                                                                       |          8 |        107 |          0 |          0 |        107 |
+| app                                                                                                                         |         62 |      4,839 |        649 |      1,035 |      6,523 |
+| app (Files)                                                                                                                 |          3 |        228 |         26 |         20 |        274 |
+| app/.mvn                                                                                                                    |          1 |          3 |         16 |          1 |         20 |
+| app/.mvn/wrapper                                                                                                            |          1 |          3 |         16 |          1 |         20 |
+| app/src                                                                                                                     |         58 |      4,608 |        607 |      1,014 |      6,229 |
+| app/src/main                                                                                                                |         45 |      3,879 |        484 |        777 |      5,140 |
+| app/src/main/java                                                                                                           |         18 |      1,002 |        412 |        276 |      1,690 |
+| app/src/main/java/com                                                                                                       |         18 |      1,002 |        412 |        276 |      1,690 |
+| app/src/main/java/com/example                                                                                               |         18 |      1,002 |        412 |        276 |      1,690 |
+| app/src/main/java/com/example/app                                                                                           |         18 |      1,002 |        412 |        276 |      1,690 |
+| app/src/main/resources                                                                                                      |         27 |      2,877 |         72 |        501 |      3,450 |
+| app/src/main/resources (Files)                                                                                              |          1 |         10 |          0 |          5 |         15 |
+| app/src/main/resources/static                                                                                               |         17 |      2,578 |         71 |        435 |      3,084 |
+| app/src/main/resources/templates                                                                                            |          9 |        289 |          1 |         61 |        351 |
+| app/src/test                                                                                                                |         13 |        729 |        123 |        237 |      1,089 |
+| app/src/test/java                                                                                                           |         13 |        729 |        123 |        237 |      1,089 |
+| app/src/test/java/com                                                                                                       |         13 |        729 |        123 |        237 |      1,089 |
+| app/src/test/java/com/example                                                                                               |         13 |        729 |        123 |        237 |      1,089 |
+| app/src/test/java/com/example/app                                                                                           |         13 |        729 |        123 |        237 |      1,089 |
++-----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------+-----------------+------------+------------+------------+------------+
+| filename                                                                                                                    | language        | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------+-----------------+------------+------------+------------+------------+
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.github/workflows/maven.yml                                   | YAML            |         21 |          1 |          6 |         28 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/SYSC4806_Project.iml                                    | XML             |          9 |          0 |          0 |          9 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/compiler.xml                                            | XML             |         18 |          0 |          0 |         18 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/dataSources.xml                                         | XML             |         22 |          0 |          0 |         22 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/encodings.xml                                           | XML             |          6 |          0 |          0 |          6 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/jarRepositories.xml                                     | XML             |         25 |          0 |          0 |         25 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/misc.xml                                                | XML             |         13 |          0 |          0 |         13 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/modules.xml                                             | XML             |          8 |          0 |          0 |          8 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/.idea/vcs.xml                                                 | XML             |          6 |          0 |          0 |          6 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/README.md                                                     | Markdown        |         61 |          0 |         24 |         85 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/.mvn/wrapper/maven-wrapper.properties                     | Java Properties |          3 |         16 |          1 |         20 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/app.yaml                                                  | YAML            |          4 |          0 |          0 |          4 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/mvnw.cmd                                                  | Batch           |        108 |         26 |         16 |        150 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/pom.xml                                                   | XML             |        116 |          0 |          4 |        120 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/Admin.java                  | Java            |         60 |         46 |         17 |        123 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/AdminController.java        | Java            |         50 |         20 |         13 |         83 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/AdminRepository.java        | Java            |          7 |          0 |          3 |         10 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/AppApplication.java         | Java            |        108 |         21 |         27 |        156 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/Book.java                   | Java            |         76 |         84 |         25 |        185 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/BookController.java         | Java            |        195 |         50 |         43 |        288 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/BookInventory.java          | Java            |         16 |          0 |          6 |         22 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/Cart.java                   | Java            |         53 |         40 |         13 |        106 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/CartController.java         | Java            |        147 |         26 |         31 |        204 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/CartRepository.java         | Java            |          6 |          0 |          4 |         10 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/HomeController.java         | Java            |         12 |          4 |          6 |         22 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/LoginEntryController.java   | Java            |         10 |          4 |          9 |         23 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/LogoutController.java       | Java            |         10 |          4 |          4 |         18 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/SettingsController.java     | Java            |         64 |         26 |          8 |         98 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/SignUpController.java       | Java            |         12 |          4 |          4 |         20 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/User.java                   | Java            |         82 |         56 |         26 |        164 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/UserController.java         | Java            |         86 |         26 |         31 |        143 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/java/com/example/app/UserRepository.java         | Java            |          8 |          1 |          6 |         15 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/application.properties                 | Java Properties |         10 |          0 |          5 |         15 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/admin.js                        | JavaScript      |        270 |          5 |         29 |        304 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/adminAddBook.js                 | JavaScript      |         25 |          0 |          2 |         27 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/adminLogin.js                   | JavaScript      |         27 |          0 |         10 |         37 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/adminaddbookpage.css            | PostCSS         |        129 |          0 |         27 |        156 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/adminstylesheet.css             | PostCSS         |        440 |         13 |         72 |        525 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/cart.js                         | JavaScript      |        175 |          6 |         40 |        221 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/cartstylesheet.css              | PostCSS         |        206 |          5 |         30 |        241 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/index.js                        | JavaScript      |        217 |          4 |         29 |        250 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/indexstylesheet.css             | PostCSS         |        441 |         25 |         81 |        547 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/loginAdmin.css                  | PostCSS         |         71 |          0 |          8 |         79 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/loginEntry.css                  | PostCSS         |         52 |          0 |         10 |         62 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/loginUser.css                   | PostCSS         |         71 |          0 |          9 |         80 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/settings.css                    | PostCSS         |        156 |          7 |         25 |        188 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/settings.js                     | JavaScript      |        129 |          5 |         19 |        153 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/signUp.css                      | PostCSS         |         80 |          1 |         12 |         93 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/signUp.js                       | JavaScript      |         58 |          0 |         15 |         73 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/static/userLogin.js                    | JavaScript      |         31 |          0 |         17 |         48 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/admin.html                   | HTML            |         58 |          0 |         14 |         72 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/adminAddBookPage.html        | HTML            |         29 |          0 |          8 |         37 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/cart.html                    | HTML            |         27 |          0 |          6 |         33 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/index.html                   | HTML            |         53 |          0 |         13 |         66 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/loginAdmin.html              | HTML            |         22 |          0 |          5 |         27 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/loginEntry.html              | HTML            |         21 |          0 |          2 |         23 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/loginUser.html               | HTML            |         22 |          0 |          4 |         26 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/settingsEntry.html           | HTML            |         33 |          1 |          6 |         40 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/main/resources/templates/signUp.html                  | HTML            |         24 |          0 |          3 |         27 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/AdminControllerTest.java    | Java            |         58 |         21 |         22 |        101 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/AdminTest.java              | Java            |         33 |          5 |         11 |         49 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/AppApplicationTests.java    | Java            |          9 |          0 |          5 |         14 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/BookControllerTest.java     | Java            |        102 |         43 |         33 |        178 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/BookTest.java               | Java            |         60 |          0 |         15 |         75 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/CartControllerTest.java     | Java            |         96 |          8 |         31 |        135 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/CartTest.java               | Java            |         85 |          0 |         23 |        108 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/HomeControllerTest.java     | Java            |         21 |          1 |          7 |         29 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/LogoutControllerTest.java   | Java            |         26 |          1 |          6 |         33 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/SettingsControllerTest.java | Java            |        107 |          9 |         36 |        152 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/SignUpControllerTest.java   | Java            |         26 |          1 |          6 |         33 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/UserControllerTest.java     | Java            |         68 |         31 |         31 |        130 |
+| /Users/zarifkhan/Documents/Work/SoftwareEngineering/Amazin.ca/app/src/test/java/com/example/app/UserTest.java               | Java            |         38 |          3 |         11 |         52 |
+| Total                                                                                                                       |                 |      5,028 |        650 |      1,065 |      6,743 |
++-----------------------------------------------------------------------------------------------------------------------------+-----------------+------------+------------+------------+------------+
