@@ -24,6 +24,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-
     - name: Build with Maven
       run: mvn -B package -f app/pom.xml
+    - name: Install Trivy
+      run: |
+        curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
+        sudo mv trivy /usr/local/bin/
+
+    - name: Generate SBOM
+      run: trivy fs --format cyclonedx --output bom.json
