@@ -5,6 +5,27 @@
 #####################################################
 
 services:
+
+  spring-app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - 8082:8080
+    environment:
+          SPRING_APPLICATION_NAME: "app"
+          SPRING_DATASOURCE_URL: "jdbc:h2:file:/data/mydb;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE"
+          SPRING_DATASOURCE_DRIVER_CLASS_NAME: "org.h2.Driver"
+          SPRING_DATASOURCE_USERNAME: "sa"
+          SPRING_DATASOURCE_PASSWORD: "password"
+          SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.H2Dialect"
+          SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+          SERVER_MAX_HTTP_REQUEST_HEADER_SIZE: "10MB"
+          SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: "2MB"
+          SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: "2MB"
+    volumes:
+     - "spring-app-data:/data"
+    restart: unless-stopped
   apiserver:
     image: dependencytrack/apiserver
     depends_on:
@@ -160,3 +181,4 @@ services:
 volumes:
   dtrack-data: {}
   postgres-data: {}
+  spring-app-data: {}
