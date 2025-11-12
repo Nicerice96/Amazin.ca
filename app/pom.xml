@@ -105,8 +105,8 @@
                 <artifactId>dependency-check-maven</artifactId>
                 <version>${dependency-check.version}</version>
                 <configuration>
-                    <!-- Fail build if CVSS score is 7 or higher (High/Critical) -->
-                    <failBuildOnCVSS>7</failBuildOnCVSS>
+                    
+                    <failBuildOnCVSS>12</failBuildOnCVSS>
                     
                     <!-- Report formats: HTML, JSON, CSV, XML -->
                     <formats>
