@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -27,12 +27,3 @@ jobs:
     - name: Build with Maven
       run: mvn -B package -f app/pom.xml
 
-    - name: Dependency Track SBOM Upload
-      uses: DependencyTrack/gh-upload-sbom@v3
-      with:
-        serverHostname: 'http://localhost:8081'
-        apiKey: ${{ secrets.DEPENDENCYTRACK_APIKEY }}
-        projectName: 'Amazin'
-        projectVersion: '0.0.1-SNAPSHOT'
-        bomFilename: "app/target/classes/META-INF/sbom/application.cdx.json"
-        autoCreate: true
