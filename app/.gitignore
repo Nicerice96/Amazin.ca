@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-actions-runner/
+
 
 ### STS ###
 .apt_generated
