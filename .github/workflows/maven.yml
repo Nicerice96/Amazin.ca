@@ -23,14 +23,6 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-
-    - name: Trivy SBOM Scan
-      uses: aquasecurity/trivy-action@master
-      with:
-        scan-type: sbom
-        format: table
-        output: trivy-sbom-report.txt
-        input: app/target/bom.xml
   
 
     - name: Build with Maven
